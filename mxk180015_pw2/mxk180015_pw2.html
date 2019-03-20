@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login File</title>
+		<style>
+		body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: "White";
+}
+a{
+	color:#1525f3 
+}
+			.formbox
+			{
+				padding: 16px;
+			}
+			
+			input[type=text], input[type=password], input[type=email] {
+  
+ 					 padding: 15px;
+  					margin: 5px 0 22px 0;
+  
+  					border: none;
+ 					 background: #f1f1f1;
+}
+
+.email,.password,.cpassword
+{
+	
+	width: 82%;
+}
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr
+{
+	border:1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+.formbox {
+	 border-top: 2px solid #aaa;
+  box-shadow:  0 2px 10px rgba(0,0,0,0.8);
+  width:350px;
+  height:615px;
+  margin:0 auto;
+  position:relative;
+  z-index:1;
+  
+  -moz-perspective: 800px;
+  -webkit-perspective: 800px;
+  perspective: 800px;
+}
+.formbox form {  
+width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  /* Enabling 3d space for the transforms */
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  
+  /* When the forms are flipped, they will be hidden */
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+  /* Enabling a smooth animated transition */
+  -moz-transition:0.8s;
+  -webkit-transition:0.8s;
+  transition:0.8s;
+   opacity:0;
+  
+  /**
+   * Rotating the login form when the
+   * flipped class is added to the container
+   */
+  
+  -moz-transform:rotateY(-180deg);
+  -webkit-transform:rotateY(-180deg);
+  transform:rotateY(-180deg);
+} 
+.form{
+	-webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  font: 15px 'Segoe UI',Arial,sans-serif;
+  background-color: #EAEBE5;
+  height: auto;
+  padding: 20px;
+  color:#7e8c8d;
+  outline:none;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+           z-index: 2;
+}
+.btn_btn-primary
+{
+	float: left;
+	background-color: #1967f4;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.9;
+	margin: 8px 0;
+}
+.registerbtn:hover {
+  opacity:1;
+}
+</style>
+<script type="text/javascript">
+	function validate() {
+		
+var fname=document.getElementById("fname");
+var lname=document.getElementById("lname");
+var email=document.getElementById("email");
+var pass=document.getElementById("password");
+var cpass=document.getElementById("cpassword");
+var accept=document.getElementById("check");
+var x=document.getElementById("pol");
+if(fname.value == ""||lname.value == ""||email.value == ""||password.value == ""||cpassword.value == ""||pass.value!=cpass.value||check.checked==false)
+{
+  if (fname.value == "") {
+  	fname.style.borderColor="Red";
+  		fname.style.borderStyle="solid";
+    alert("First Name must be filled out");
+    
+    }
+     if (lname.value == "") {
+  	lname.style.borderColor="Red";
+  		lname.style.borderStyle="solid";
+    alert("Last Name must be filled out");
+    
+    }
+     if (email.value == "") {
+  	email.style.borderColor="Red";
+  		email.style.borderStyle="solid";
+    alert("Email must be filled out");
+    
+    }
+     if (password.value == "") {
+  	password.style.borderColor="Red";
+  		password.style.borderStyle="solid";
+    alert("Password must be filled out");
+    
+    }
+     if (cpassword.value == "") {
+  	cpassword.style.borderColor="Red";
+  		cpassword.style.borderStyle="solid";
+    alert("Please enter confirm password");
+    
+    }
+    if(pass.value!=cpass.value)
+    {
+    	password.style.borderColor="Red";
+  		password.style.borderStyle="solid";
+    	cpassword.style.borderColor="Red";
+  		cpassword.style.borderStyle="solid";
+    	alert("Passwords do not match!");
+    }
+   
+   
+    if(check.checked==false)
+    {
+    	alert("Please check the terms and conditions");
+    	
+    	x.style.color="Red";
+    	check.style.borderColor="Red";
+    	check.style.borderStyle="solid";
+    	check.style.floodColor="Red";
+    }
+    
+    }
+    else{alert("Form has been submitted successfully!");
+    fname.value="";
+    lname.value="";
+    email.value="";
+    pass.value="";
+    cpass.value="";
+    check.checked=false;
+    password.style.borderStyle="None";
+    	cpassword.style.borderColor="Red";
+  		cpassword.style.borderStyle="None";
+  		email.style.borderStyle="None";
+  		lname.style.borderStyle="None";
+  		fname.style.borderStyle="None";
+  		x.style.color="Black";
+  		
+    
+    }
+    return false;
+    
+  }
+  
+
+</script>
+	
+	</head>
+	<body>
+		<form name="form" id="form" onsubmit="return validate()">
+		<div class="formbox" align="center">
+			<h1 align="left"> Sign Up</h1>
+			<p align="left">Please fill in this form to create an account!</p>
+			<hr>
+			
+			<input type="text" class="fname" placeholder="First Name" name="fname" id="fname" >
+			
+			<input type="text" class="lname" placeholder="Last Name" name="lname" id="lname" >
+			<br />
+			<br />
+			
+			<input type="email" class="email"placeholder="Email" name="email" id="email" align="left">
+			<br />
+			<br />
+			<input type="password" class="password" placeholder="Password" name="password" id="password" align="left">
+			<br />
+			<br />
+			<input type="password" class="cpassword" placeholder="Confirm Password" name="cpassword" id="cpassword" align="left">
+			<br /><br />
+			<div id="pol"><input type="checkbox" id="check" align="left"/>I accept the <a href="terms.html">Terms of Use</a> & <a href="Privacy.html">Privacy Policy</a></div>
+			<br />
+			<br />
+			
+			<!--<input type="submit" value="Sign Up" class="rgstbtn" align="left"/>-->
+			<input class="btn_btn-primary" type="submit" value="Sign Up" />
+			</div>
+		</form>
+	</body>
+</html>
